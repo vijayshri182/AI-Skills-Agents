@@ -1,0 +1,34 @@
+{
+  "_comment": "Example mapping for apply_replacements.py. Match counts must equal the original's counts. Prefer short unique ASCII prefixes with mode 'start'. Use segment lists for bold labels / selective bolding.",
+  "replacements": [
+    {
+      "match": "Engineering & Technology Leader | Product & Platform Engineering",
+      "mode": "start",
+      "new": "Engineering & Technology Leader | SRE & Platform Engineering | Distributed Systems | DevOps & Cloud"
+    },
+    {
+      "match": "Engineering Leadership & Team Management",
+      "mode": "exact",
+      "new": "Engineering Leadership & Team Development"
+    },
+    {
+      "match": "Version Control & Repository Management:",
+      "mode": "start",
+      "new": [
+        ["SRE, Monitoring & Observability:", true],
+        [" Application Logs & Monitoring Tools, Root Cause Analysis (RCA), Performance Optimization", false]
+      ]
+    },
+    {
+      "match": "Recognized with the Netcracker Above and Beyond Award",
+      "mode": "start",
+      "new": [
+        ["Recognized with the ", false],
+        ["Netcracker Above and Beyond Award", true],
+        [" for outstanding contribution to the ", false],
+        ["JSAT project", true],
+        [".", false]
+      ]
+    }
+  ]
+}
